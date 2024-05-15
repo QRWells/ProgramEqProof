@@ -121,8 +121,3 @@ let swap p =
     match p with
     | Product(p1, p2) -> Product(p2, p1)
     | _ -> raise TypeError
-
-let func p =
-    match p with
-    | Product(p1, p2) -> Add(p1, p2)
-    | _ -> raise TypeError
