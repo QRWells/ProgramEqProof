@@ -60,17 +60,17 @@ let sat f =
 
     split (freeVarList [] f) f
 
-let rec list_mem x l =
-    match l with
+let rec list_mem x =
+    function
     | [] -> false
     | y :: q -> x = y || list_mem x q
 
-let rec list_map f l =
-    match l with
+let rec list_map f =
+    function
     | [] -> []
     | x :: q -> (f x) :: (list_map f q)
 
-let rec list_filter f l =
-    match l with
+let rec list_filter f =
+    function
     | [] -> []
     | x :: q -> if f x then x :: (list_filter f q) else list_filter f q
